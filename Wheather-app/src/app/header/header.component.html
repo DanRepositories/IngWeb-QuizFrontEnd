@@ -1,0 +1,14 @@
+<div class="titles">
+  <span>Foto</span>
+  <span>Clima</span>
+  <span class="title-two">Chile - {{ selectedRegion }}</span>
+</div>
+
+<div class="menu">
+  <button 
+    *ngFor="let name of namesRegions"
+    (click)="selectRegion(name)"
+  >
+    {{ name }}
+  </button>
+</div>
