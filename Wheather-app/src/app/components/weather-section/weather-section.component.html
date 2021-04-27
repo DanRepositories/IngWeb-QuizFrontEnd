@@ -1,5 +1,8 @@
-<ul>
-  <li *ngFor="let region of regions">
-    {{ region.display }}
-  </li>
-</ul>
+<div *ngFor="let day of regions[0].week" class="day-card">
+  <span>{{ day.display }}</span>
+  <span>Foto</span>
+  <span>{{ day.tempCelsius }} º</span>
+  <span>{{ day.weather }}</span>
+</div>
+
+<span>Al dar click sobre cada dia permitira actualizar la informacion</span>

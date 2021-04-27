@@ -11,7 +11,7 @@ export class Region {
     let days = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
 
     days.forEach(day => {
-      this.week.push({display: day, tempCelsius: 0, tempFarenheit: 0, wheater: WeatherTypes.SOLEADO});
+      this.week.push({display: day, tempCelsius: 0, tempFarenheit: 0, weather: WeatherTypes.SOLEADO});
     });
   }
 }
