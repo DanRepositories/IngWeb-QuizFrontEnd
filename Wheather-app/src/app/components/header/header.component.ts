@@ -7,15 +7,15 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  selectedRegion: String;
-  namesRegions: Array<String>;
+  selectedRegion: string;
+  namesRegions: Array<string>;
 
   constructor() {
     this.selectedRegion = '';
     this.namesRegions = ['Valparaiso', 'Metropolitana', 'Bio Bio', 'Araucania'];
   }
 
-  selectRegion(name: String) {
+  selectRegion(name: string) {
     this.selectedRegion = name;
   }
 }
