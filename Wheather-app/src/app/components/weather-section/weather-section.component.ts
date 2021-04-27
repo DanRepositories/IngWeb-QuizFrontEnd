@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Region } from '../../models/region';
 
 @Component({
   selector: 'app-weather-section',
   templateUrl: './weather-section.component.html',
   styleUrls: ['./weather-section.component.scss']
 })
-export class WeatherSectionComponent implements OnInit {
+export class WeatherSectionComponent {
 
-  constructor() { }
+  regions: Array<Region> = [];
 
-  ngOnInit() {
+  constructor() {
+    let namesRegions = ['Valparaiso', 'Metropolitana', 'Bio Bio', 'Araucania'];
+
+    namesRegions.forEach(currentName => {
+      this.regions.push(new Region(currentName));
+    });
   }
-
 }
