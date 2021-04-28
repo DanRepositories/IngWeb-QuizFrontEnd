@@ -14,8 +14,8 @@ export class WeatherSectionComponent implements OnInit {
   currentRegion: number;
 
   constructor(private helper: HelperService) {
-    NAMES_REGIONS.forEach(currentName => {
-      this.regions.push(new Region(currentName));
+    NAMES_REGIONS.forEach((currentName, index) => {
+      this.regions.push(new Region(currentName, index));
     });
 
     this.currentRegion = 0;
@@ -24,6 +24,6 @@ export class WeatherSectionComponent implements OnInit {
   ngOnInit() {
     this.helper.updatedNumberRegion.subscribe(numberRegion => {
       this.currentRegion = numberRegion;
-    })
+    });
   }
 }

@@ -1,22 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HelperService } from 'src/app/services/helper-service.service';
+import { NAMES_REGIONS } from '../../models/global-names';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   selectedRegion: string;
   namesRegions: Array<string>;
 
   constructor(private helper: HelperService) {
-    this.selectedRegion = '';
-    this.namesRegions = ['Valparaiso', 'Metropolitana', 'Bio Bio', 'Araucania'];
+    this.namesRegions = [...NAMES_REGIONS];
+    this.selectedRegion = this.namesRegions[0];
   }
-
-  ngOnInit() {}
 
   selectRegion(name: string, index: number) {
     this.selectedRegion = name;
