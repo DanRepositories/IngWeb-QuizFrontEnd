@@ -17,13 +17,13 @@ export class WeatherSectionComponent implements OnInit {
     NAMES_REGIONS.forEach((currentName, index) => {
       this.regions.push(new Region(currentName, index));
     });
-
-    this.currentRegion = 0;
   }
 
   ngOnInit() {
     this.helper.updatedNumberRegion.subscribe(numberRegion => {
       this.currentRegion = numberRegion;
     });
+
+    this.currentRegion = 0;
   }
 }
