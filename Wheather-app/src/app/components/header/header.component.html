@@ -6,8 +6,8 @@
 
 <div class="menu">
   <button 
-    *ngFor="let name of namesRegions"
-    (click)="selectRegion(name)"
+    *ngFor="let name of namesRegions; index as i"
+    (click)="selectRegion(name, i)"
   >
     {{ name }}
   </button>
