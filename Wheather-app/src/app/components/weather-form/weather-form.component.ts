@@ -41,8 +41,6 @@ export class WeatherFormComponent {
   }
 
   onSubmit() {
-    console.log(this.weatherInfo.getRawValue());
-
     const values: formInfo = this.weatherInfo.getRawValue();
     const numDay = values.day - 1;
     const numRegion = values.region - 1;

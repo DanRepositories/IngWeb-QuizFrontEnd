@@ -20,5 +20,6 @@ export class HeaderComponent {
 
   selectRegion(name: string, index: number) {
     this.selectedRegion = name;
+    this.helper.setRegion(index);
   }
 }

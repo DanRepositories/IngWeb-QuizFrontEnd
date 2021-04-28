@@ -22,7 +22,10 @@ export class HelperService {
 
   updateDay(day: Day, numDay: number, numRegion: number) {
     this.regions[numRegion].week[numDay] = day;
-    console.log(this.regions);
+    this.setRegion(numRegion);
+  }
+
+  setRegion(numRegion: number) {
     this._currentNumberRegion.next(numRegion);
   }
 }
