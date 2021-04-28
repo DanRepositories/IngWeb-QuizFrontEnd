@@ -1,4 +1,9 @@
-<div *ngFor="let day of regions[0].week" class="day-card">
+<div
+  *ngFor="let day of regions[0].week"
+  class="day-card"
+  routerLink="/update-info"
+  routerLinkActive="active"
+>
   <span>{{ day.display }}</span>
   <span>Foto</span>
   <span>{{ day.tempCelsius }} º</span>
