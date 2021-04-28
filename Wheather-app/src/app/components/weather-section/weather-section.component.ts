@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Region } from '../../models/region';
 import { NAMES_REGIONS } from '../../models/global-names';
-import { HelperService, formInfo } from 'src/app/services/helper-service.service';
-import { WeatherTypes } from 'src/app/models/weather';
+import { HelperService } from 'src/app/services/helper-service.service';
 
 @Component({
   selector: 'app-weather-section',
