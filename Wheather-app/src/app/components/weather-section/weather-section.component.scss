@@ -33,4 +33,12 @@
     width: 350px;
     font-size: 20px;
   }
+
+  ::ng-deep .mat-tab-label-active {
+    color: red;
+  }
+
+  ::ng-deep .mat-ink-bar {
+    display: none;
+  }
 }

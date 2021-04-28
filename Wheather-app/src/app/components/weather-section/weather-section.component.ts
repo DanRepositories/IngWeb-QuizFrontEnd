@@ -14,7 +14,7 @@ export class WeatherSectionComponent implements OnInit {
   showCelsius: boolean = true;
 
   constructor(private helper: HelperService) {
-    this.region = new Region(NAMES_REGIONS[0], 0);
+    this.region = new Region(NAMES_REGIONS[0]);
   }
 
   ngOnInit() {
