@@ -11,20 +11,12 @@ import { WeatherTypes } from 'src/app/models/weather';
 })
 export class WeatherSectionComponent implements OnInit {
 
-  regions: Array<Region> = [];
-  currentRegion: number;
+  region: Region;
 
   constructor(private helper: HelperService) {
-    NAMES_REGIONS.forEach((currentName, index) => {
-      this.regions.push(new Region(currentName, index));
-    });
+    this.region = new Region(NAMES_REGIONS[0], 0);
   }
 
   ngOnInit() {
-    this.helper.updatedNumberRegion.subscribe(numberRegion => {
-      this.currentRegion = numberRegion;
-    });
-
-    this.currentRegion = 0;
   }
 }
