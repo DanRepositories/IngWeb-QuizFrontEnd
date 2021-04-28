@@ -9,6 +9,7 @@ import { NAMES_REGIONS } from '../../models/global-names';
 })
 export class HeaderComponent {
 
+  disabledMenu: boolean = false;
   selectedRegion: string;
   namesRegions: Array<string>;
 
@@ -19,6 +20,5 @@ export class HeaderComponent {
 
   selectRegion(name: string, index: number) {
     this.selectedRegion = name;
-    this.helper.updateRegion(index);
   }
 }
