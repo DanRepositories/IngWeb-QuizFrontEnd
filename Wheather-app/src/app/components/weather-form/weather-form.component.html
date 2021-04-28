@@ -1,1 +1,43 @@
-<p>weather-form works!</p>
+<form [formGroup]="weatherInfo" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Region</mat-label>
+    <mat-select formControlName="region" required>
+      <mat-option value="0">Select</mat-option>
+      <mat-option *ngFor="let name of namesRegions; index as i" [value]="i + 1">
+        {{ name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <p>Estado del clima</p>
+  <mat-radio-group formControlName="weather" required>
+    <mat-radio-button value="1">soleado</mat-radio-button>
+    <mat-radio-button value="2">lluvioso</mat-radio-button>
+    <mat-radio-button value="3">nublado</mat-radio-button>
+    <mat-radio-button value="4">tormenta</mat-radio-button>
+  </mat-radio-group>
+
+  <label for="day">Dia</label>
+  <mat-form-field appearance="fill">
+    <mat-label>Dia</mat-label>
+    <mat-select formControlName="day" required>
+      <mat-option value="0">Select</mat-option>
+      <mat-option *ngFor="let day of days; index as i" [value]="i + 1">
+        {{ day }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Temperatura</mat-label>
+    <input matInput placeholder="10" formControlName="temperature" required>
+  </mat-form-field>
+
+  <p>Grados</p>
+  <mat-radio-group formControlName="degrees" required>
+    <mat-radio-button value="1">Celsius</mat-radio-button>
+    <mat-radio-button value="2">Farenheit</mat-radio-button>
+  </mat-radio-group>
+
+  <button>Actualizar</button>
+</form>

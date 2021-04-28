@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Region } from '../../models/region';
+import { NAMES_REGIONS } from '../../models/global-names';
 
 @Component({
   selector: 'app-weather-section',
@@ -11,9 +12,7 @@ export class WeatherSectionComponent {
   regions: Array<Region> = [];
 
   constructor() {
-    let namesRegions = ['Valparaiso', 'Metropolitana', 'Bio Bio', 'Araucania'];
-
-    namesRegions.forEach(currentName => {
+    NAMES_REGIONS.forEach(currentName => {
       this.regions.push(new Region(currentName));
     });
   }
