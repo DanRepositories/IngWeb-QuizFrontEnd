@@ -11,10 +11,10 @@
 
   <p>Estado del clima</p>
   <mat-radio-group formControlName="weather" required>
-    <mat-radio-button value="1">soleado</mat-radio-button>
-    <mat-radio-button value="2">lluvioso</mat-radio-button>
-    <mat-radio-button value="3">nublado</mat-radio-button>
-    <mat-radio-button value="4">tormenta</mat-radio-button>
+    <mat-radio-button value="soleado">soleado</mat-radio-button>
+    <mat-radio-button value="lluvioso">lluvioso</mat-radio-button>
+    <mat-radio-button value="nublado">nublado</mat-radio-button>
+    <mat-radio-button value="tormenta">tormenta</mat-radio-button>
   </mat-radio-group>
 
   <label for="day">Dia</label>
@@ -22,7 +22,7 @@
     <mat-label>Dia</mat-label>
     <mat-select formControlName="day" required>
       <mat-option value="0">Select</mat-option>
-      <mat-option *ngFor="let day of days; index as i" [value]="i + 1">
+      <mat-option *ngFor="let day of namesDays; index as i" [value]="day">
         {{ day }}
       </mat-option>
     </mat-select>
@@ -30,7 +30,7 @@
 
   <mat-form-field>
     <mat-label>Temperatura</mat-label>
-    <input matInput placeholder="10" formControlName="temperature" required>
+    <input type="number" matInput placeholder="10" formControlName="temperature" required>
   </mat-form-field>
 
   <p>Grados</p>
