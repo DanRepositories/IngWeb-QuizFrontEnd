@@ -11,6 +11,7 @@ import { HelperService } from 'src/app/services/helper-service.service';
 export class WeatherSectionComponent implements OnInit {
 
   region: Region;
+  showCelsius: boolean = true;
 
   constructor(private helper: HelperService) {
     this.region = new Region(NAMES_REGIONS[0], 0);
@@ -20,5 +21,9 @@ export class WeatherSectionComponent implements OnInit {
     this.helper.currentNumberRegion.subscribe(numDay => {
       this.region = this.helper.regions[numDay];
     })
+  }
+
+  changeScale(scaleSelected) {
+    this.showCelsius = (0 == scaleSelected.index) ? true : false;
   }
 }

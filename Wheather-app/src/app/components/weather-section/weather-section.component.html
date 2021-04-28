@@ -1,3 +1,8 @@
+<mat-tab-group (selectedTabChange)="changeScale($event)">
+  <mat-tab label="Celsius"></mat-tab>
+  <mat-tab label="Farenheit"></mat-tab>
+</mat-tab-group>
+
 <div
   *ngFor="let day of region.week"
   class="day-card"
@@ -6,7 +11,7 @@
 >
   <span>{{ day.display }}</span>
   <span>Foto</span>
-  <span>{{ day.tempCelsius }} º</span>
+  <span>{{ showCelcius ? day.tempCelsius : day.tempFarenheit }} º</span>
   <span>{{ day.weather }}</span>
 </div>
 
