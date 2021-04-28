@@ -1,6 +1,15 @@
 :host {
 
   display: flex;
+  flex-direction: column;
+
+  .tabs-scales {
+    align-self: flex-end;
+  }
+
+  .week-container {
+    display: flex;
+  }
 
   .day-card {
     width: 100px;
