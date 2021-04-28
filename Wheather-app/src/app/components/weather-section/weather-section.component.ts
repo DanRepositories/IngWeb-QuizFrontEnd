@@ -17,5 +17,9 @@ export class WeatherSectionComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.helper.currentNumberRegion.subscribe(numDay => {
+      console.log(numDay);
+      this.region = this.helper.regions[numDay];
+    })
   }
 }

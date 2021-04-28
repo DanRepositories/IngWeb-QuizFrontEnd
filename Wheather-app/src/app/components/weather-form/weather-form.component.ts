@@ -9,7 +9,7 @@ import { Day } from '../../models/day';
 interface formInfo {
   region: number,
   weather: string,
-  day: string,
+  day: number,
   temperature: number,
   degrees: number,
 }
@@ -34,15 +34,21 @@ export class WeatherFormComponent {
     this.weatherInfo = this._fb.group({
       region: [0, [Validators.required]],
       weather: ['', [Validators.required]],
-      day: ['', [Validators.required]],
+      day: [0, [Validators.required]],
       temperature: [0, [Validators.required]],
       degrees: [0, [Validators.required]],
     })
   }
 
   onSubmit() {
-    console.log(this.makeDayFromValues(this.weatherInfo.getRawValue()));
-    //this.router.navigate(['']);
+    console.log(this.weatherInfo.getRawValue());
+
+    const values: formInfo = this.weatherInfo.getRawValue();
+    const numDay = values.day - 1;
+    const numRegion = values.region - 1;
+    const newDay = this.makeDayFromValues(values);
+    this.helper.updateDay(newDay, numDay, numRegion);
+    this.router.navigate(['']);
   }
 
   private makeDayFromValues(values: formInfo) {
@@ -57,7 +63,7 @@ export class WeatherFormComponent {
       day.tempCelsius = this.farToCelsius(values.temperature);
     }
 
-    day.display = values.day;
+    day.display = NAMES_DAYS[values.day - 1];
     return day;
   }
 

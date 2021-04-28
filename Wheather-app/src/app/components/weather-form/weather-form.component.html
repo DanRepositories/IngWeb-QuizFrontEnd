@@ -22,7 +22,7 @@
     <mat-label>Dia</mat-label>
     <mat-select formControlName="day" required>
       <mat-option value="0">Select</mat-option>
-      <mat-option *ngFor="let day of namesDays; index as i" [value]="day">
+      <mat-option *ngFor="let day of namesDays; index as i" [value]="i + 1">
         {{ day }}
       </mat-option>
     </mat-select>
