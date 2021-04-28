@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HelperService } from 'src/app/services/helper-service.service';
 import { NAMES_REGIONS, NAMES_DAYS } from '../../models/global-names';
 
 @Component({
@@ -18,11 +19,12 @@ export class WeatherFormComponent {
   constructor(
     private _fb: FormBuilder,
     private router: Router,
+    private helper: HelperService,
     ) {
     this.weatherInfo = this._fb.group({
       region: [0, Validators.required],
       weather: [0, Validators.required],
-      day: ['', Validators.required],
+      day: [0, Validators.required],
       temperature: [0, Validators.required],
       degrees: ['', Validators.required],
     })
@@ -30,6 +32,7 @@ export class WeatherFormComponent {
 
   onSubmit() {
     console.log(this.weatherInfo.getRawValue());
+    this.helper.updateDay(this.weatherInfo.getRawValue());
     this.router.navigate(['']);
   }
 }
