@@ -9,6 +9,7 @@
     *ngFor="let name of namesRegions; index as i"
     (click)="selectRegion(name, i)"
     class="menu-option"
+    [class.selected-option]="selectedRegion == name"
   >
     {{ name }}
   </span>
