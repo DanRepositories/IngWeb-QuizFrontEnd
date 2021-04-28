@@ -3,7 +3,34 @@
   display: flex;
   flex-direction: column;
 
-  .title-two {
-    margin-left: auto;
+  .titles {
+    display: flex;
+    align-items: center;
+    height: 100px;
+
+    span {
+      margin: 10px 20px;
+      font-size: 20px;
+    }
+
+    .title-two {
+      margin-left: auto;
+      width: 200px;
+    }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: 0px 50px;
+    border: 1px solid black;
+  }
+
+  .menu-option {
+    width: 200px;
+    margin: 5px 20px;
+    cursor: pointer;
+    text-align: center;
   }
 }

@@ -5,11 +5,11 @@
 </div>
 
 <div class="menu">
-  <button 
+  <span 
     *ngFor="let name of namesRegions; index as i"
     (click)="selectRegion(name, i)"
-    [disabled]="disabledMenu"
+    class="menu-option"
   >
     {{ name }}
-  </button>
+  </span>
 </div>
