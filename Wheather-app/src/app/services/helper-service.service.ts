@@ -15,8 +15,8 @@ export class HelperService {
   currentNumberRegion = this._currentNumberRegion.asObservable();
 
   constructor() {
-    NAMES_REGIONS.forEach((name, index) => {
-      this.regions.push(new Region(name, index));
+    NAMES_REGIONS.forEach(name => {
+      this.regions.push(new Region(name));
     });
   }
 
