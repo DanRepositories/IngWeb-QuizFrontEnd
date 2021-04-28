@@ -4,6 +4,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatInputModule,
     MatTabsModule,
     MatButtonModule,
+    MatButtonToggleModule,
   ]
 })
 export class AngularMaterialModule { }

@@ -61,6 +61,14 @@ export class WeatherFormComponent {
       day.tempCelsius = this.farToCelsius(values.temperature);
     }
 
+    let newWeather;
+    switch (values.weather) {
+      case 'Soleado': newWeather = WeatherTypes.SOLEADO;
+      case 'Nublado': newWeather = WeatherTypes.NUBLADO;
+      case 'Lluvioso': newWeather = WeatherTypes.LLUVIOSO;
+      case 'Tormenta': newWeather = WeatherTypes.TORMENTA;
+    }
+    day.weather = newWeather;
     day.display = NAMES_DAYS[values.day - 1];
     return day;
   }

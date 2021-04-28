@@ -1,21 +1,22 @@
-<mat-tab-group (selectedTabChange)="changeScale($event)" class="tabs-scales">
-  <mat-tab label="Celsius"></mat-tab>
-  <mat-tab label="Farenheit"></mat-tab>
-</mat-tab-group>
-
-<div class="week-container">
-  <div
-    *ngFor="let day of region.week"
-    class="day-card"
-    routerLink="/update-info"
-    routerLinkActive="active"
-  >
-    <span>{{ day.display }}</span>
-    <span>Foto</span>
-    <span>{{ showCelsius ? day.tempCelsius : day.tempFarenheit }} º</span>
-    <span>{{ day.weather }}</span>
+<div class="info-wrapper">
+  <div class="week-container">
+    <div
+      *ngFor="let day of region.week"
+      class="day-card"
+      routerLink="/update-info"
+      routerLinkActive="active"
+    >
+      <span>{{ day.display }}</span>
+      <img [src]="'../../../assets/' + day.weather + '-icon.png'" class="icon-weather">
+      <span>{{ showCelsius ? day.tempCelsius : day.tempFarenheit }} º</span>
+      <span>{{ day.weather }}</span>
+    </div>
   </div>
 
+  <mat-tab-group (selectedTabChange)="changeScale($event)" class="tabs-scales">
+    <mat-tab label="Celsius"></mat-tab>
+    <mat-tab label="Farenheit"></mat-tab>
+  </mat-tab-group>
 </div>
 
-<span>Al dar click sobre cada dia permitira actualizar la informacion</span>
+<span class="info">Al dar click sobre cada dia permitira actualizar la informacion</span>

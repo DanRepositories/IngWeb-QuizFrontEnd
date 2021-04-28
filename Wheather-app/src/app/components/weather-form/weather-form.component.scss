@@ -1,5 +1,9 @@
 :host {
 
+  p {
+    margin: 0px;
+  }
+
   .form {
     display: flex;
     flex-direction: column;
@@ -15,7 +19,7 @@
     flex-direction: column;
 
     * {
-      margin: 15px 0px;
+      margin: 10px 0px;
     }
   }
 
@@ -25,5 +29,6 @@
 
   .submit-button {
     margin-left: auto;
+    border: 1px solid black;
   }
 }
