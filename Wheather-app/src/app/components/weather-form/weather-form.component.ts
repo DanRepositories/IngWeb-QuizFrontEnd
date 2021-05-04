@@ -63,10 +63,10 @@ export class WeatherFormComponent {
 
     let newWeather;
     switch (values.weather) {
-      case 'Soleado': newWeather = WeatherTypes.SOLEADO;
-      case 'Nublado': newWeather = WeatherTypes.NUBLADO;
-      case 'Lluvioso': newWeather = WeatherTypes.LLUVIOSO;
-      case 'Tormenta': newWeather = WeatherTypes.TORMENTA;
+      case 'Soleado': newWeather = WeatherTypes.SOLEADO; break;
+      case 'Nublado': newWeather = WeatherTypes.NUBLADO; break;
+      case 'Lluvioso': newWeather = WeatherTypes.LLUVIOSO; break;
+      case 'Tormenta': newWeather = WeatherTypes.TORMENTA; break;
     }
     day.weather = newWeather;
     day.display = NAMES_DAYS[values.day - 1];
